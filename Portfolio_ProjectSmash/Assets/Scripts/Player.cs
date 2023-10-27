@@ -45,6 +45,8 @@ public class Player : MonoBehaviour
         moveVec = new Vector3(hAxis, 0 ,vAxis).normalized;
 
         this.transform.position += moveVec * speed * Time.deltaTime;
+
+        anim.SetBool("isRun", moveVec != Vector3.zero);
     }
 
     void Turn()
